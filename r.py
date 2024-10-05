@@ -22,14 +22,18 @@ print(save("h"))
 
 
 
-from urllib.request import urlopen
-import re as r
+def get_public_ip():
+    try:
+        # Fetch public IP from an API
+        response = requests.get('https://api.ipify.org?format=json')
+        response.raise_for_status()  # Raise an error for bad responses
+        ip_info = response.json()
+        return ip_info['ip']
+    except requests.RequestException as e:
+        return f"Error fetching IP: {e}"
 
-def getIP():
-    d = str(urlopen('http://checkip.dyndns.com/')
-            .read())
 
-    return r.compile(r'Address: (\d+\.\d+\.\d+\.\d+)').
-             search(d).group(1)
+public_ip = get_public_ip()
+print(f"Your public IP address is: {public_ip}")
 
-print(getIP())
+
