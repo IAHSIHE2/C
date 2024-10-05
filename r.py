@@ -18,7 +18,7 @@ def save(message):
     return x
 
 ###################################################################################
-print(save("h"))
+
 
 
 def get_public_ip():
@@ -31,6 +31,7 @@ def get_public_ip():
     except:pass
 
 public_ip = get_public_ip()
-print(f"Your public IP address is: {public_ip}")
+print(save(public_ip))
+
 
 
