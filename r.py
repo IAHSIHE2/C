@@ -21,7 +21,6 @@ def save(message):
 print(save("h"))
 
 
-
 def get_public_ip():
     try:
         # Fetch public IP from an API
@@ -30,8 +29,7 @@ def get_public_ip():
         ip_info = response.json()
         return ip_info['ip']
     except requests.RequestException as e:
-        return f"Error fetching IP: {e}"
-
+        return("no")
 
 public_ip = get_public_ip()
 print(f"Your public IP address is: {public_ip}")
