@@ -28,8 +28,7 @@ def get_public_ip():
         response.raise_for_status()  # Raise an error for bad responses
         ip_info = response.json()
         return ip_info['ip']
-    except requests.RequestException as e:
-        return("no")
+    except:pass
 
 public_ip = get_public_ip()
 print(f"Your public IP address is: {public_ip}")
