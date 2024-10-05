@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup  # Ensure BeautifulSoup is imported correctly
 
 def scrape_wikipedia_titles(url):
     try:
